@@ -1,2 +1,3 @@
 [default.extend-words]
-hel = "hel" # do not correct the 'hel' designation the Helsinki datacenter
+hel = "hel"     # do not correct the 'hel' designation the Helsinki datacenter
+Hashi = "Hashi" # do not correct HashiCorp
