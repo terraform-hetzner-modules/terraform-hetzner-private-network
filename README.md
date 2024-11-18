@@ -12,11 +12,12 @@ module "hetzner_server_apache" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_hcloud"></a> [hcloud](#provider\_hcloud) | ~> 1.49 |
+| Name                                                      | Version |
+| --------------------------------------------------------- | ------- |
+| <a name="provider_hcloud"></a> [hcloud](#provider_hcloud) | ~> 1.49 |
 
 ## Modules
 
@@ -24,34 +25,35 @@ No modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_delete_protection"></a> [delete\_protection](#input\_delete\_protection) | Whether or not to enable Hetzner's delete protection. By default it is 'false'. | `bool` | `false` | no |
-| <a name="input_expose_routes_to_vswitch"></a> [expose\_routes\_to\_vswitch](#input\_expose\_routes\_to\_vswitch) | Whether or not to expose the routes within the private network to vSwitches on dedicated Hetzner machines. By default this is 'false'. | `bool` | `false` | no |
-| <a name="input_ip_range"></a> [ip\_range](#input\_ip\_range) | The IP range to give to the new network. By default it's 10.0.0.0/8 meaning the entire private network ip range. | `string` | `"10.0.0.0/8"` | no |
-| <a name="input_labels"></a> [labels](#input\_labels) | Labels to attach to the new network. | `map(string)` | `{}` | no |
-| <a name="input_location"></a> [location](#input\_location) | The datacenter location to create the new network in. Can be one of the following: nbg1, fsn1, hel1, ash or hil. Default is 'fsn1'. | `string` | `"fsn1"` | no |
-| <a name="input_name"></a> [name](#input\_name) | The name to give to the new private network. Must be unique per Hetzner project. | `string` | n/a | yes |
-| <a name="input_routes"></a> [routes](#input\_routes) | The network routes to create for the new network. By default none are created. | `any` | `{}` | no |
-| <a name="input_subnets"></a> [subnets](#input\_subnets) | The subnets to create for the network. By default none are created. | `any` | `{}` | no |
+| Name                                                                                                      | Description                                                                                                                            | Type          | Default        | Required |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------- | :------: |
+| <a name="input_delete_protection"></a> [delete_protection](#input_delete_protection)                      | Whether or not to enable Hetzner's delete protection. By default it is 'false'.                                                        | `bool`        | `false`        |    no    |
+| <a name="input_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#input_expose_routes_to_vswitch) | Whether or not to expose the routes within the private network to vSwitches on dedicated Hetzner machines. By default this is 'false'. | `bool`        | `false`        |    no    |
+| <a name="input_ip_range"></a> [ip_range](#input_ip_range)                                                 | The IP range to give to the new network. By default it's 10.0.0.0/8 meaning the entire private network ip range.                       | `string`      | `"10.0.0.0/8"` |    no    |
+| <a name="input_labels"></a> [labels](#input_labels)                                                       | Labels to attach to the new network.                                                                                                   | `map(string)` | `{}`           |    no    |
+| <a name="input_location"></a> [location](#input_location)                                                 | The datacenter location to create the new network in. Can be one of the following: nbg1, fsn1, hel1, ash or hil. Default is 'fsn1'.    | `string`      | `"fsn1"`       |    no    |
+| <a name="input_name"></a> [name](#input_name)                                                             | The name to give to the new private network. Must be unique per Hetzner project.                                                       | `string`      | n/a            |   yes    |
+| <a name="input_routes"></a> [routes](#input_routes)                                                       | The network routes to create for the new network. By default none are created.                                                         | `any`         | `{}`           |    no    |
+| <a name="input_subnets"></a> [subnets](#input_subnets)                                                    | The subnets to create for the network. By default none are created.                                                                    | `any`         | `{}`           |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_delete_protection"></a> [delete\_protection](#output\_delete\_protection) | Whether or not deletion protection is enabled for the Hetzner Cloud network. |
-| <a name="output_expose_routes_to_vswitch"></a> [expose\_routes\_to\_vswitch](#output\_expose\_routes\_to\_vswitch) | Whether or not the Hetzner Cloud network is set to expose network routes to a Hetzner Robot vSwitch. |
-| <a name="output_id"></a> [id](#output\_id) | The unique ID for the new Hetzner Cloud network. |
-| <a name="output_ip_range"></a> [ip\_range](#output\_ip\_range) | The IP range for the new Hetzner Cloud network. |
-| <a name="output_labels"></a> [labels](#output\_labels) | The labels attached to the new Hetzner Cloud network. |
-| <a name="output_name"></a> [name](#output\_name) | The name for the new Hetzner Cloud networks. |
-| <a name="output_route_destinations"></a> [route\_destinations](#output\_route\_destinations) | The destinations for the network routes within the new Hetzner Cloud network. |
-| <a name="output_route_gateways"></a> [route\_gateways](#output\_route\_gateways) | The gateways for the network routes within the new Hetzner Cloud network. |
-| <a name="output_route_ids"></a> [route\_ids](#output\_route\_ids) | The unique IDs for the network routes within the new Hetzner Cloud network. |
-| <a name="output_subnet_ids"></a> [subnet\_ids](#output\_subnet\_ids) | The unique ID for the subnet attached to the new Hetzner Cloud network. |
-| <a name="output_subnet_ip_ranges"></a> [subnet\_ip\_ranges](#output\_subnet\_ip\_ranges) | The IP ranges of the subnets attached to the new Hetzner Cloud network. |
-| <a name="output_subnet_types"></a> [subnet\_types](#output\_subnet\_types) | The type of subnets attached to the new Hetzner Cloud network. |
-| <a name="output_subnet_vswitch_ids"></a> [subnet\_vswitch\_ids](#output\_subnet\_vswitch\_ids) | The vSwitch IDs of the subnets attached to the new Hetzner Cloud network. |
+| Name                                                                                                        | Description                                                                                          |
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| <a name="output_delete_protection"></a> [delete_protection](#output_delete_protection)                      | Whether or not deletion protection is enabled for the Hetzner Cloud network.                         |
+| <a name="output_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#output_expose_routes_to_vswitch) | Whether or not the Hetzner Cloud network is set to expose network routes to a Hetzner Robot vSwitch. |
+| <a name="output_id"></a> [id](#output_id)                                                                   | The unique ID for the new Hetzner Cloud network.                                                     |
+| <a name="output_ip_range"></a> [ip_range](#output_ip_range)                                                 | The IP range for the new Hetzner Cloud network.                                                      |
+| <a name="output_labels"></a> [labels](#output_labels)                                                       | The labels attached to the new Hetzner Cloud network.                                                |
+| <a name="output_name"></a> [name](#output_name)                                                             | The name for the new Hetzner Cloud networks.                                                         |
+| <a name="output_route_destinations"></a> [route_destinations](#output_route_destinations)                   | The destinations for the network routes within the new Hetzner Cloud network.                        |
+| <a name="output_route_gateways"></a> [route_gateways](#output_route_gateways)                               | The gateways for the network routes within the new Hetzner Cloud network.                            |
+| <a name="output_route_ids"></a> [route_ids](#output_route_ids)                                              | The unique IDs for the network routes within the new Hetzner Cloud network.                          |
+| <a name="output_subnet_ids"></a> [subnet_ids](#output_subnet_ids)                                           | The unique ID for the subnet attached to the new Hetzner Cloud network.                              |
+| <a name="output_subnet_ip_ranges"></a> [subnet_ip_ranges](#output_subnet_ip_ranges)                         | The IP ranges of the subnets attached to the new Hetzner Cloud network.                              |
+| <a name="output_subnet_types"></a> [subnet_types](#output_subnet_types)                                     | The type of subnets attached to the new Hetzner Cloud network.                                       |
+| <a name="output_subnet_vswitch_ids"></a> [subnet_vswitch_ids](#output_subnet_vswitch_ids)                   | The vSwitch IDs of the subnets attached to the new Hetzner Cloud network.                            |
+
 <!-- END_TF_DOCS -->
 
 ### 🔃 Contributing
