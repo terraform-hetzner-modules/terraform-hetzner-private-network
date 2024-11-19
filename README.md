@@ -1,5 +1,14 @@
 # _Hetzner Cloud_ - Private Network <img src="https://avatars.githubusercontent.com/u/30047064?s=200&v=4" alt="Hetzner Logo" align="right" width="128"/> <img src="https://raw.githubusercontent.com/fmjstudios/artwork/refs/heads/main/projects/terraform/icon/color/terraform-icon-color.png" alt="Terraform Logo" align="right" width="128"/>
 
+[![License](https://img.shields.io/github/license/terraform-hetzner-modules/terraform-hetzner-private-network?label=License)](https://opensource.org/licenses/MIT)
+[![Terraform](https://img.shields.io/badge/Terraform-_>=_1.7-brightgreen?logo=terraform&logoColor=623CE4)][terraform]
+[![Opentofu](https://img.shields.io/badge/OpenTofu-_>=_1.8-brightgreen?logo=opentofu)][opentofu]
+[![CI Status](https://github.com/terraform-hetzner-modules/terraform-hetzner-private-network/actions/workflows/testing.yaml/badge.svg)](https://github.com/terraform-hetzner-modules/terraform-hetzner-private-network/blob/main/.github/workflows/testing.yaml)
+[![GitHub Release](https://img.shields.io/github/v/release/terraform-hetzner-modules/terraform-hetzner-private-network?label=Release)][github_releases]
+[![GitHub Activity](https://img.shields.io/github/commit-activity/m/terraform-hetzner-modules/terraform-hetzner-private-network?label=Commits)][github_commits]
+[![Renovate](https://img.shields.io/badge/Renovate-enabled-brightgreen?logo=renovate&logoColor=1A1F6C)][renovate]
+[![Pre-Commit](https://img.shields.io/badge/PreCommit-enabled-brightgreen?logo=precommit&logoColor=FAB040)][pre-commit]
+
 A [Terraform module][module] to create and manage secure private networks within [Hetzner Cloud][hetzner].
 
 ## ✨ TL;DR
@@ -16,7 +25,7 @@ module "hetzner_server_apache" {
 ## Providers
 
 | Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
+|-----------------------------------------------------------|---------|
 | <a name="provider_hcloud"></a> [hcloud](#provider_hcloud) | ~> 1.49 |
 
 ## Modules
@@ -26,7 +35,7 @@ No modules.
 ## Inputs
 
 | Name                                                                                                      | Description                                                                                                                            | Type          | Default        | Required |
-| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------- | :------: |
+|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------|----------------|:--------:|
 | <a name="input_delete_protection"></a> [delete_protection](#input_delete_protection)                      | Whether or not to enable Hetzner's delete protection. By default it is 'false'.                                                        | `bool`        | `false`        |    no    |
 | <a name="input_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#input_expose_routes_to_vswitch) | Whether or not to expose the routes within the private network to vSwitches on dedicated Hetzner machines. By default this is 'false'. | `bool`        | `false`        |    no    |
 | <a name="input_ip_range"></a> [ip_range](#input_ip_range)                                                 | The IP range to give to the new network. By default it's 10.0.0.0/8 meaning the entire private network ip range.                       | `string`      | `"10.0.0.0/8"` |    no    |
@@ -39,7 +48,7 @@ No modules.
 ## Outputs
 
 | Name                                                                                                        | Description                                                                                          |
-| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | <a name="output_delete_protection"></a> [delete_protection](#output_delete_protection)                      | Whether or not deletion protection is enabled for the Hetzner Cloud network.                         |
 | <a name="output_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#output_expose_routes_to_vswitch) | Whether or not the Hetzner Cloud network is set to expose network routes to a Hetzner Robot vSwitch. |
 | <a name="output_id"></a> [id](#output_id)                                                                   | The unique ID for the new Hetzner Cloud network.                                                     |
@@ -85,9 +94,15 @@ for more information. You may also use the linked contact details to reach out d
 <!-- General links -->
 
 [org]: https://github.com/fmjstudios
+[terraform]: https://terraform.io
+[opentofu]: https://opentofu.org/
 [hashicorp]: https://www.hashicorp.com/
 [hetzner]: https://hetzner.com
+[github_releases]: https://github.com/terraform-hetzner-modules/terraform-hetzner-private-network/releases
+[github_commits]: https://github.com/terraform-hetzner-modules/terraform-hetzner-private-network/commits/main/
 
 <!-- Third-party -->
 
-[module]: https://registry.terraform.io/modules/terraform-hetzner-modules/compute/server/latest
+[module]: https://registry.terraform.io/modules/terraform-hetzner-modules/cloud/private-network/latest
+[renovate]: https://renovatebot.com/
+[pre-commit]: https://pre-commit.com/
