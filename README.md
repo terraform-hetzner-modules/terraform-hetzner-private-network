@@ -25,7 +25,7 @@ module "hetzner_server_apache" {
 ## Providers
 
 | Name                                                      | Version |
-|-----------------------------------------------------------|---------|
+| --------------------------------------------------------- | ------- |
 | <a name="provider_hcloud"></a> [hcloud](#provider_hcloud) | ~> 1.49 |
 
 ## Modules
@@ -35,7 +35,7 @@ No modules.
 ## Inputs
 
 | Name                                                                                                      | Description                                                                                                                            | Type          | Default        | Required |
-|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------|----------------|:--------:|
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------- | :------: |
 | <a name="input_delete_protection"></a> [delete_protection](#input_delete_protection)                      | Whether or not to enable Hetzner's delete protection. By default it is 'false'.                                                        | `bool`        | `false`        |    no    |
 | <a name="input_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#input_expose_routes_to_vswitch) | Whether or not to expose the routes within the private network to vSwitches on dedicated Hetzner machines. By default this is 'false'. | `bool`        | `false`        |    no    |
 | <a name="input_ip_range"></a> [ip_range](#input_ip_range)                                                 | The IP range to give to the new network. By default it's 10.0.0.0/8 meaning the entire private network ip range.                       | `string`      | `"10.0.0.0/8"` |    no    |
@@ -48,7 +48,7 @@ No modules.
 ## Outputs
 
 | Name                                                                                                        | Description                                                                                          |
-|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | <a name="output_delete_protection"></a> [delete_protection](#output_delete_protection)                      | Whether or not deletion protection is enabled for the Hetzner Cloud network.                         |
 | <a name="output_expose_routes_to_vswitch"></a> [expose_routes_to_vswitch](#output_expose_routes_to_vswitch) | Whether or not the Hetzner Cloud network is set to expose network routes to a Hetzner Robot vSwitch. |
 | <a name="output_id"></a> [id](#output_id)                                                                   | The unique ID for the new Hetzner Cloud network.                                                     |
